@@ -1,8 +1,7 @@
 #include "interrupt.h"
-#define F_CPU 16000000UL	//Defines CPU speed
+#define F_CPU 16000000UL
 #include <avr/io.h>
 
-//This is the old Timer Code modified for interrupt
 void timer_delay_init(void)
 {
 	TCNT0 = 0;

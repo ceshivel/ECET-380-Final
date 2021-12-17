@@ -6,8 +6,6 @@
 #define F_CPU 16000000UL
 
 void init_timer0(void);
-void init_timer1(void);
-void init_timer3(void);
 
 uint8_t number[10];
 
@@ -15,8 +13,9 @@ uint8_t number[10];
 * delay_1ms is used as the base code for custom delay function with the timer
 * delay_ms calls delay_1ms an amount of time to achieve that many miliseconds of delay
 *
-* used for procedure one
 */
+
+//function prototypes
 void delay_1ms();
 void delay_ms(uint16_t sec);
 void test(void);

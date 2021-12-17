@@ -15,27 +15,6 @@ void init_timer0(void)
 	TCCR0B = 0x00;
 }
 
-//timer one used for motor pwm
-void init_timer1(void)
-{
-	//9 bit fast PWM, clear on match
-	TCCR1A = (1 << WGM11) | (1 << COM1A1);
-	
-	// 16000000 % 3900Hz % 512 = 8
-	TCCR1B = (1 << WGM12) | (1 << CS11); //prescaler of 8
-}
-
-//timer three used for procedure three LED
-//CTC used for ease of 50% duty cycle
-void init_timer3(void)
-{
-	//set CTC mode, toggle on compare match
-	TCCR3A = (1 << COM3A0);
-
-	//set prescaler of 256 in consideration of 16 bit timer
-	TCCR3B = (1 << CS32) | (1 << WGM32);
-}
-
 //function used to delay 1ms
 void delay_1ms(void)
 {

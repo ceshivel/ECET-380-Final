@@ -9,15 +9,13 @@
 int main(void)
 {
 	//initialization functions
-
-	io_init();
+	io_init(); 
 	init_timer0();
 	timer_delay_init();
 	sei();
-
 	
 	mode = 0;
-	test();
+	test(); //make sure all seven segments are working
 
 	while(1)
 	{
@@ -26,29 +24,26 @@ int main(void)
 		{
 			case 0:
 			{
-				//PORTA = number[0];
 				//do nothing
 			}
 			//start timer
+
 			case 1:
 			{
-				//PORTA = number[1]; //troubleshooting test code
-				stopwatch();
+				stopwatch(); //run stopwatch function
 			}
 			break;
 			//stop timer
+
 			case 2:
 			{
-				//PORTA = number[3]; //troubleshooting test code
-				//stop timer
-				break;
+				break; //stop timer
 			}
 
 			//reset timer
 			case 3:
 			{
-				//timer value reset to 0
-				reset();
+				reset(); //reset 7 segments back to 0
 				break;
 			}
 			
